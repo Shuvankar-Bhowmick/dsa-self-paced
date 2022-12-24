@@ -1,0 +1,62 @@
+[1mdiff --git a/strings/out/production/src/maxOccuringCharacter.class b/strings/out/production/src/maxOccuringCharacter.class[m
+[1mindex d802495..fc98163 100644[m
+Binary files a/strings/out/production/src/maxOccuringCharacter.class and b/strings/out/production/src/maxOccuringCharacter.class differ
+[1mdiff --git a/strings/src/src/BinaryString.java b/strings/src/src/BinaryString.java[m
+[1mindex 20dc932..4be4776 100644[m
+[1m--- a/strings/src/src/BinaryString.java[m
+[1m+++ b/strings/src/src/BinaryString.java[m
+[36m@@ -1,2 +1,22 @@[m
+[31m-package PACKAGE_NAME;public class BinaryString {[m
+[32m+[m[32mpublic class BinaryString {[m
+[32m+[m[32m    public static void main(String[] args) {[m
+[32m+[m[32m        String str = "11011000110001";[m
+[32m+[m[32m        System.out.println(binarySubstring(str.length(), str));[m
+[32m+[m[32m    }[m
+[32m+[m[32m    public static int binarySubstring(int a, String str)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        // Your code here[m
+[32m+[m[32m        int count = 0;[m
+[32m+[m[32m        int ans = 0;[m
+[32m+[m
+[32m+[m[32m        for (int i = 0; i < a; i++) {[m
+[32m+[m[32m            if (str.charAt(i) == '1') {[m
+[32m+[m[32m                count++;[m
+[32m+[m[32m                if (count > 1)[m
+[32m+[m[32m                    ans = ans + (count-1);[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        return ans;[m
+[32m+[m[32m    }[m
+ }[m
+[1mdiff --git a/strings/src/src/FirstOccuranceOfSubstring.java b/strings/src/src/FirstOccuranceOfSubstring.java[m
+[1mindex 094f78f..99a728c 100644[m
+[1m--- a/strings/src/src/FirstOccuranceOfSubstring.java[m
+[1m+++ b/strings/src/src/FirstOccuranceOfSubstring.java[m
+[36m@@ -1,2 +1,25 @@[m
+[31m-package PACKAGE_NAME;public class FirstOccuranceOfSubstring {[m
+[32m+[m[32mpublic class FirstOccuranceOfSubstring {[m
+[32m+[m[32m    public static void main(String[] args) {[m
+[32m+[m[32m        String s = "GeeksForGeeks";[m
+[32m+[m[32m        String x = "eeks";[m
+[32m+[m[32m        System.out.println(new FirstOccuranceOfSubstring().strstr(s, x));[m
+[32m+[m[32m    }[m
+[32m+[m[32m    int strstr(String s, String x)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        // Your code here[m
+[32m+[m[32m        int N = s.length();[m
+[32m+[m[32m        int M = x.length();[m
+[32m+[m
+[32m+[m[32m        //naive pattern searching algorithm[m
+[32m+[m[32m        for (int i = 0; i <= N - M; i++) {[m
+[32m+[m[32m            int j = 0;[m
+[32m+[m[32m            for (; j < M; j++) {[m
+[32m+[m[32m                if (s.charAt(i + j) != x.charAt(j))[m
+[32m+[m[32m                    break;[m
+[32m+[m[32m            }[m
+[32m+[m[32m            if (j == M)[m
+[32m+[m[32m                return i;[m
+[32m+[m[32m        }[m
+[32m+[m[32m        return -1;[m
+[32m+[m[32m    }[m
+ }[m
